@@ -43,9 +43,9 @@ const TrainingModule = ({ onClose }: TrainingModuleProps) => {
       question: "Wie heeft gelijk?",
       description: "Eén van deze drie collega's heeft het bij het juiste eind. Kies wie een situatie beschrijft die je moet melden als mogelijke datalek.",
       options: [
-        { text: ""Ik kreeg per ongeluk een bestand met persoonsgegevens van een andere afdeling. Maar ach, ik heb het gewoon verwijderd, dus geen probleem toch?"", correct: false },
-        { text: ""Mijn wachtwoord is verlopen, maar zolang niemand mijn computer gebruikt, is dat geen ramp."", correct: false },
-        { text: ""De printer op kantoor gaf me ineens een vertrouwelijk document van een collega. Ik wist niet wat ik ermee moest, dus ik heb het gewoon op zijn bureau gelegd."", correct: true }
+        { text: "'Ik kreeg per ongeluk een bestand met persoonsgegevens van een andere afdeling. Maar ach, ik heb het gewoon verwijderd, dus geen probleem toch?'", correct: false },
+        { text: "'Mijn wachtwoord is verlopen, maar zolang niemand mijn computer gebruikt, is dat geen ramp.'", correct: false },
+        { text: "'De printer op kantoor gaf me ineens een vertrouwelijk document van een collega. Ik wist niet wat ik ermee moest, dus ik heb het gewoon op zijn bureau gelegd.'", correct: true }
       ]
     },
     {
