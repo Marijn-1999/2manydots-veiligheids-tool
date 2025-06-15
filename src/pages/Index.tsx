@@ -1,11 +1,19 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
+import FlowChart from "@/components/FlowChart";
+import RightPanel from "@/components/RightPanel";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="flex h-screen bg-gray-50">
+      <Sidebar />
+      <div className="flex-1 flex flex-col">
+        <Header />
+        <div className="flex flex-1">
+          <FlowChart />
+          <RightPanel />
+        </div>
       </div>
     </div>
   );
