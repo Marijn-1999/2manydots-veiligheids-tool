@@ -1,9 +1,10 @@
-
 import { Lock } from "lucide-react";
 import { useState } from "react";
+import TrainingModule from "./TrainingModule";
 
 const FlowChart = () => {
   const [activeNode, setActiveNode] = useState<number | null>(3);
+  const [showTraining, setShowTraining] = useState(false);
 
   const nodes = [
     { id: 1, position: { x: 400, y: 80 }, unlocked: true },
@@ -14,10 +15,23 @@ const FlowChart = () => {
     { id: 6, position: { x: 650, y: 650 }, unlocked: false },
   ];
 
+  const handleStartTraining = () => {
+    setShowTraining(true);
+  };
+
+  const handleCloseTraining = () => {
+    setShowTraining(false);
+    setActiveNode(null);
+  };
+
+  if (showTraining) {
+    return <TrainingModule onClose={handleCloseTraining} />;
+  }
+
   return (
     <div className="flex-1 bg-gray-50 relative overflow-hidden">
+      {/* Connection lines */}
       <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-        {/* Connection lines */}
         <path
           d="M 450 120 Q 550 120 650 160"
           stroke="#e91e63"
@@ -98,7 +112,10 @@ const FlowChart = () => {
         >
           <h3 className="font-semibold text-lg mb-1">Bewustwording</h3>
           <p className="text-gray-300 text-sm mb-4">Reageren op incidenten</p>
-          <button className="w-full bg-white text-gray-800 py-2 px-4 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+          <button 
+            onClick={handleStartTraining}
+            className="w-full bg-white text-gray-800 py-2 px-4 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+          >
             Start +10 ⭐
           </button>
         </div>
