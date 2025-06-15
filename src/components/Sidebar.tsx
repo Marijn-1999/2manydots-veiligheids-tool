@@ -1,13 +1,16 @@
 
 import { Home, Users, Gift, BookOpen, User } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+  
   const menuItems = [
-    { icon: Home, label: "Training", active: true },
-    { icon: Users, label: "Teamoverzicht", active: false },
-    { icon: Gift, label: "Beloningen", active: false },
-    { icon: BookOpen, label: "Kennisplein", active: false },
-    { icon: User, label: "Profiel", active: false },
+    { icon: Home, label: "Training", path: "/", active: location.pathname === "/" },
+    { icon: Users, label: "Teamoverzicht", path: "/teamoverzicht", active: location.pathname === "/teamoverzicht" },
+    { icon: Gift, label: "Beloningen", path: "#", active: false },
+    { icon: BookOpen, label: "Kennisplein", path: "/kennisplein", active: location.pathname === "/kennisplein" },
+    { icon: User, label: "Profiel", path: "/profiel", active: location.pathname === "/profiel" },
   ];
 
   return (
@@ -22,17 +25,31 @@ const Sidebar = () => {
             const Icon = item.icon;
             return (
               <li key={index}>
-                <a
-                  href="#"
-                  className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    item.active
-                      ? "bg-pink-50 text-pink-600"
-                      : "text-gray-600 hover:bg-gray-50"
-                  }`}
-                >
-                  <Icon className="w-5 h-5 mr-3" />
-                  {item.label}
-                </a>
+                {item.path === "#" ? (
+                  <a
+                    href="#"
+                    className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      item.active
+                        ? "bg-pink-50 text-pink-600"
+                        : "text-gray-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    <Icon className="w-5 h-5 mr-3" />
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      item.active
+                        ? "bg-pink-50 text-pink-600"
+                        : "text-gray-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    <Icon className="w-5 h-5 mr-3" />
+                    {item.label}
+                  </Link>
+                )}
               </li>
             );
           })}
