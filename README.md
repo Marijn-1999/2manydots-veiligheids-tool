@@ -2,9 +2,6 @@
 
 DotSecure is an interactive, gamified training platform designed to raise **data security awareness** among employees. Through engaging learning modules, progress tracking, and friendly competition, users develop essential cybersecurity skills in a fun and motivating way.
 
-![screenshot](./screenshot-training-page.png)
-
----
 
 ## Features
 
