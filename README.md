@@ -1,73 +1,120 @@
-# Welcome to your Lovable project
+# DotSecure – Gamified Cybersecurity Training Platform
 
-## Project info
+DotSecure is an interactive, gamified training platform designed to raise **data security awareness** among employees. Through engaging learning modules, progress tracking, and friendly competition, users develop essential cybersecurity skills in a fun and motivating way.
 
-**URL**: https://lovable.dev/projects/bc0090cf-8d1c-4789-aa4e-e2b95ddcc3d3
+![screenshot](./screenshot-training-page.png)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Interactive training flow with unlockable modules  
+- Realistic incident-based quizzes with instant feedback  
+- Leaderboard and reward system to drive engagement  
+- Intuitive navigation with dedicated pages for:  
+  - Training  
+  - Team Overview  
+  - Knowledge Hub  
+  - User Profile  
+- Progress tracking and personalized feedback  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bc0090cf-8d1c-4789-aa4e-e2b95ddcc3d3) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Installation
 
-**Use your preferred IDE**
+Clone the project and install dependencies:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+git clone https://github.com/your-username/dotsecure.git
+cd dotsecure
+npm install
+Start the development server:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+bash
+Copy
+Edit
 npm run dev
-```
+Dependencies:
 
-**Edit a file directly in GitHub**
+React
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+React Router
 
-**Use GitHub Codespaces**
+TailwindCSS
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Framer Motion
 
-## What technologies are used for this project?
+TypeScript (optional)
 
-This project is built with:
+## Usage
+Launch the app and explore the following pages via the sidebar:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Training Page: Select and complete modules to earn ⭐.
 
-## How can I deploy this project?
+Interactive Quiz: Start a training, answer questions, and track progress.
 
-Simply open [Lovable](https://lovable.dev/projects/bc0090cf-8d1c-4789-aa4e-e2b95ddcc3d3) and click on Share -> Publish.
+Team Overview: View team rankings and monthly leaderboards.
 
-## Can I connect a custom domain to my Lovable project?
+Knowledge Hub: Expand cybersecurity knowledge via categorized resources.
 
-Yes, you can!
+Profile: Monitor your learning progress and earned rewards.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Example code to render the TrainingCard component:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+jsx
+Copy
+Edit
+<TrainingCard
+  title="Bewustwording"
+  subtitle="Reageren op incidenten"
+  onStart={() => startTraining(3)}
+  reward={10}
+/>
+
+## Contributing
+We welcome contributions! To contribute:
+
+Fork the repository
+
+Create a new branch (git checkout -b feature/your-feature)
+
+Commit your changes (git commit -m 'Add your feature')
+
+Push to the branch (git push origin feature/your-feature)
+
+Open a Pull Request
+
+Please follow our code of conduct and ensure your changes align with the project's design and goals.
+
+## Troubleshooting / FAQ
+Q: The quiz doesn't load after clicking 'Start'.
+A: Make sure all assets and training questions are properly defined in the training module state.
+
+Q: Styling looks different from the design.
+A: Double-check Tailwind classes and compare with the Figma design specs.
+
+Q: Navigation is broken or routes don't load.
+A: Ensure that React Router is configured with proper Route components and paths.
+
+## License
+This project is licensed under the MIT License.
+Feel free to use, share, and modify.
+
+## Changelog
+v1.0.0 – Initial Release
+Implemented core UI: Training, Team, Knowledge, Profile pages
+
+Added interactive quiz module with progress bar
+
+Integrated gamified elements: points, stars, leaderboard
+
+Responsive layout and navigation
+
+## Acknowledgements
+Built using Lovable AI
+
+Design inspired by Figma mockups by our internal UX team
+
+Special thanks to contributors for testing and feedback
+
+
